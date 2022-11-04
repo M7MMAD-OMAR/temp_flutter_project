@@ -21,18 +21,6 @@ class _LoginPageState extends State<LoginPage> {
           email: _emailController.text.trim(),
           password: _passwordController.text.trim());
     } on FirebaseAuthException catch (e) {
-      print(e.code);
-      if (e.code == 'weak-password') {
-        print(e.code);
-      } else if (e.code == 'email-already-in-use') {
-        print(e.code);
-      } else if (e.code == 'user-not-found') {
-        print(e.code);
-      } else if (e.code == 'wrong-password') {
-        print(e.code);
-      }
-      print(e.code);
-    } catch (e) {
       print(e);
     }
   }
