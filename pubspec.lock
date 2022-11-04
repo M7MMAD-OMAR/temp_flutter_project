@@ -137,6 +137,13 @@ packages:
     description: flutter
     source: sdk
     version: "0.0.0"
+  flutter_vpn:
+    dependency: "direct main"
+    description:
+      name: flutter_vpn
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "0.12.0"
   flutter_web_plugins:
     dependency: transitive
     description: flutter
@@ -268,4 +275,4 @@ packages:
     version: "2.1.2"
 sdks:
   dart: ">=2.18.2 <3.0.0"
-  flutter: ">=1.20.0"
+  flutter: ">=2.5.0"
