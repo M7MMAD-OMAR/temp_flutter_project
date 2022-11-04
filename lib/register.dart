@@ -1,5 +1,7 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:temp_project/home_page.dart';
+import 'package:temp_project/login.dart';
 
 class RegisterPage extends StatefulWidget {
   const RegisterPage({Key? key}) : super(key: key);
@@ -16,9 +18,17 @@ class _RegisterPageState extends State<RegisterPage> {
   final _passwordController = TextEditingController();
 
   Future createAccount() async {
-    await FirebaseAuth.instance.createUserWithEmailAndPassword(
-        email: _emailController.text.trim(),
-        password: _passwordController.text.trim());
+    print(_emailController.text.trim());
+    try {
+      await FirebaseAuth.instance.createUserWithEmailAndPassword(
+          email: _emailController.text.trim(),
+          password: _passwordController.text.trim());
+
+      Navigator.of(context)
+          .pushReplacement(MaterialPageRoute(builder: (context) => HomePage()));
+    } on FirebaseAuthException catch (e) {
+      print(e);
+    }
   }
 
   @override
@@ -63,10 +73,15 @@ class _RegisterPageState extends State<RegisterPage> {
                 hintText: "enter your password",
               ),
             ),
-            const SizedBox(height: 20,),
+            const SizedBox(
+              height: 20,
+            ),
             ElevatedButton(
-                onPressed: createAccount,
-                child: const Text("Create Account")),
+                onPressed: createAccount, child: const Text("Create Account")),
+            ElevatedButton(
+                onPressed: () => Navigator.of(context).pushReplacement(
+                    MaterialPageRoute(builder: (context) => const LoginPage())),
+                child: const Text("login")),
           ],
         ),
       ),

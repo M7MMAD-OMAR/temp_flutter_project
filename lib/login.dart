@@ -78,7 +78,7 @@ class _LoginPageState extends State<LoginPage> {
                   height: 30,
                 ),
                 ElevatedButton(
-                    onPressed: () => Navigator.of(context).push(
+                    onPressed: () => Navigator.of(context).pushReplacement(
                         MaterialPageRoute(
                             builder: (context) => const RegisterPage())),
                     child: const Text("register")),
