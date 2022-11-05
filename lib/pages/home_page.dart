@@ -21,26 +21,26 @@ class _HomePageState extends State<HomePage> {
     MyTab(
       iconPath: 'lib/icons/donut.png',
     ),
-
-    // burger tab
-    MyTab(
-      iconPath: 'lib/icons/burger.png',
-    ),
-
-    // smoothie tab
-    MyTab(
-      iconPath: 'lib/icons/smoothie.png',
-    ),
-
-    // pancake tab
-    MyTab(
-      iconPath: 'lib/icons/pancakes.png',
-    ),
-
-    // pizza tab
-    MyTab(
-      iconPath: 'lib/icons/pizza.png',
-    ),
+    //
+    // // burger tab
+    // MyTab(
+    //   iconPath: 'lib/icons/burger.png',
+    // ),
+    //
+    // // smoothie tab
+    // MyTab(
+    //   iconPath: 'lib/icons/smoothie.png',
+    // ),
+    //
+    // // pancake tab
+    // MyTab(
+    //   iconPath: 'lib/icons/pancakes.png',
+    // ),
+    //
+    // // pizza tab
+    // MyTab(
+    //   iconPath: 'lib/icons/pizza.png',
+    // ),
   ];
 
   @override
@@ -89,11 +89,11 @@ class _HomePageState extends State<HomePage> {
               child: Row(
                 children: [
                   Text(
-                    'I want to eat',
+                    'مرحبا في',
                     style: TextStyle(fontSize: 24, color: Colors.grey[600]),
                   ),
                   const Text(
-                    ' EAT',
+                    ' التطبيق الجديد',
                     style: TextStyle(fontSize: 32, fontWeight: FontWeight.bold),
                   ),
                 ],
