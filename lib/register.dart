@@ -67,6 +67,7 @@ class _RegisterPageState extends State<RegisterPage> {
             ),
             TextFormField(
               controller: _passwordController,
+              obscureText: true,
               keyboardType: TextInputType.visiblePassword,
               decoration: const InputDecoration(
                 label: Text("Password"),

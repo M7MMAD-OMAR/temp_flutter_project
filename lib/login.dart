@@ -14,10 +14,10 @@ class _LoginPageState extends State<LoginPage> {
   final _emailController = TextEditingController();
   final _passwordController = TextEditingController();
 
-  Future createAccount() async {
+  Future signAccount() async {
     print(_emailController.text.trim());
     try {
-      await FirebaseAuth.instance.createUserWithEmailAndPassword(
+      await FirebaseAuth.instance.signInWithEmailAndPassword(
           email: _emailController.text.trim(),
           password: _passwordController.text.trim());
     } on FirebaseAuthException catch (e) {
@@ -57,6 +57,7 @@ class _LoginPageState extends State<LoginPage> {
                 // textFiled Password
                 TextFormField(
                   controller: _passwordController,
+                  obscureText: true,
                   keyboardType: TextInputType.visiblePassword,
                   decoration: const InputDecoration(
                     label: Text("Password"),
@@ -73,7 +74,7 @@ class _LoginPageState extends State<LoginPage> {
                   height: 30,
                 ),
                 ElevatedButton(
-                    onPressed: createAccount, child: const Text("Login")),
+                    onPressed: signAccount, child: const Text("Login")),
                 const SizedBox(
                   height: 30,
                 ),
